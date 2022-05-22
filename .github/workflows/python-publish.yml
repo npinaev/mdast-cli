@@ -1,4 +1,4 @@
-name: Publish mdast_cli 🐍 distributions to PyPI
+name: Publish Poly app downloader 🐍 distribution to PyPI
 
 on: 
   push: 
@@ -7,14 +7,14 @@ on:
 
 jobs:
   build-n-publish:
-    name: Build and publish mdast_cli 🐍 distributions to PyPI
+    name: Build and publish Poly app downloader 🐍 distribution to PyPI
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master
-    - name: Set up Python 3.7
+    - name: Set up Python 3.9
       uses: actions/setup-python@v1
       with:
-        python-version: 3.7
+        python-version: 3.9
     - name: Install pypa/build
       run: >-
         python -m
