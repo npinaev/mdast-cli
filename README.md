@@ -1,6 +1,5 @@
 # App downloader from Google Play and App Store
 
-[![Dependency Review](https://github.com/npinaev/poly_app_downloader/actions/workflows/dependency-review.yml/badge.svg?branch=main)](https://github.com/npinaev/poly_app_downloader/actions/workflows/dependency-review.yml)
 [![Docker Hub - Publish Poly app downloader image](https://github.com/npinaev/poly_app_downloader/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/npinaev/poly_app_downloader/actions/workflows/docker-publish.yml)
 [![PyPi - Publish Poly app downloader 🐍 distribution](https://github.com/npinaev/poly_app_downloader/actions/workflows/python-publish.yml/badge.svg)](https://github.com/npinaev/poly_app_downloader/actions/workflows/python-publish.yml)
 
