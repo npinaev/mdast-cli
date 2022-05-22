@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setup(
     name="poly_app_downloader",
 
-    version='1.3.4',
+    version='1.3.5',
 
     author="npinaev",
     description="app_downloader",

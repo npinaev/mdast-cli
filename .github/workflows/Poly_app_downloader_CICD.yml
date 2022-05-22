@@ -59,7 +59,7 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag npinaev/poly_app_downloader:latest
+        run: docker build . --file Dockerfile --tag npinaev/poly_app_downloader:1.3.5
 
       - name: Docker Hub push image
         run: docker push npinaev/poly_app_downloader
