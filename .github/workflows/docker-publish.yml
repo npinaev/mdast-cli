@@ -1,4 +1,4 @@
-name:  Publish Poly app downloader image to Docker Hub
+name:  Docker Hub - Publish Poly app downloader image
 on:
   push:
     branches: [ main ]

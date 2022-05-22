@@ -1,4 +1,4 @@
-name: Publish Poly app downloader 🐍 distribution to PyPI
+name: PyPi - Publish Poly app downloader 🐍 distribution
 
 on: 
   push: 
