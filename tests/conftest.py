@@ -1,7 +1,8 @@
-from pytest_testconfig import config
 import pytest
-from mdast_cli.distribution_systems.google_play import GooglePlayAPI
+from pytest_testconfig import config
+
 from mdast_cli.distribution_systems.appstore import AppStore
+from mdast_cli.distribution_systems.google_play import GooglePlayAPI
 
 
 @pytest.fixture

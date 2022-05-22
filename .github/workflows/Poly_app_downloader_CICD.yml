@@ -44,7 +44,6 @@ jobs:
         password: ${{ secrets.PYPI_API_CLI_TOKEN }}
 
   build-n-publish-docker:
-    needs: build-n-publish-pypi
     name: Docker Hub - Publish Poly app downloader image
     runs-on: ubuntu-18.04
 
@@ -65,7 +64,7 @@ jobs:
         run: docker push npinaev/poly_app_downloader
 
   run-integration-tests:
-    needs: build-n-publish-docker
+    needs: build-n-publish-pypi
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -108,7 +107,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
-          pytest tests/system_tests
+          pytest tests/system_tests --tc-file=config/github.ini
         env:
           PYTHONPATH: "."
 

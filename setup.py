@@ -1,12 +1,14 @@
 from setuptools import find_packages, setup
 
+from mdast_cli.helpers.const import TAG
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
     name="poly_app_downloader",
 
-    version='1.3.6',
+    version=TAG,
 
     author="npinaev",
     description="app_downloader",
