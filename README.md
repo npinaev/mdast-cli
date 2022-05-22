@@ -1,11 +1,10 @@
 # App downloader from Google Play and App Store
 
-[![Docker Hub - Publish Poly app downloader image](https://github.com/npinaev/poly_app_downloader/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/npinaev/poly_app_downloader/actions/workflows/docker-publish.yml)
-[![PyPi - Publish Poly app downloader 🐍 distribution](https://github.com/npinaev/poly_app_downloader/actions/workflows/python-publish.yml/badge.svg)](https://github.com/npinaev/poly_app_downloader/actions/workflows/python-publish.yml)
+[![PyPi](https://img.shields.io/pypi/v/poly-app-downloader)](https://pypi.org/project/poly-app-downloader/)
 
 **Automate the download of mobile applications.**
 
-Dowmload apps from most popular markets automatically 
+Download apps from most popular markets automatically 
 
 This script is designed to integrate mobile applications' download in the continuous development process (CI / CD).  
 

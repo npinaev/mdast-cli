@@ -28,7 +28,8 @@ DastStateDict = {
     11: "CANCELLING"
 }
 
-
 TRY_COUNT = 360
 END_SCAN_TIMEOUT = 30
 SLEEP_TIMEOUT = 10
+
+TAG = '1.3.3.5'
