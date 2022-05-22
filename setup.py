@@ -12,7 +12,7 @@ setup(
     description="app_downloader",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/npinaev/mdast-cli",
+    url="https://github.com/npinaev/poly_app_downloader",
     packages=find_packages(),
     include_package_data=True,
     package_data={'': ['device.properties']},
@@ -47,7 +47,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'mdast_cli=mdast_cli.mdast_scan:main'
+            'poly_app_downloader=mdast_cli.mdast_scan:main'
         ]
     },
     classifiers=[
