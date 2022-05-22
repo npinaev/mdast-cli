@@ -153,3 +153,4 @@ cython_debug/
 /mdast_cli/downloaded_apps/
 /README.md
 /.pytest_cache/
+/poly_app_downloader.egg-info/
