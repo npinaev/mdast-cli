@@ -108,9 +108,8 @@ def main():
                                         arguments.google_play_file_name,
                                         arguments.google_play_download_with_creds)
 
-    if arguments.download_only is True:
-        Log.info('Your application was downloaded!')
-        sys.exit(0)
+    Log.info('Your application was downloaded!')
+    sys.exit(0)
 
 
 if __name__ == '__main__':
