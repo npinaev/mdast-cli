@@ -4,9 +4,9 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="mdast_cli",
+    name="poly_app_downloader",
 
-    version='1.3.3.7',
+    version='1.2',
 
     author="npinaev",
     description="app_downloader",

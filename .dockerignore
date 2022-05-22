@@ -152,3 +152,4 @@ cython_debug/
 /downloaded_apps/
 /mdast_cli/downloaded_apps/
 /README.md
+/.pytest_cache/
