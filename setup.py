@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setup(
     name="poly_app_downloader",
 
-    version='1.2',
+    version='1.3',
 
     author="npinaev",
     description="app_downloader",
@@ -42,7 +42,7 @@ setup(
         'six==1.16.0',
         'soupsieve==2.3.1',
         'uritemplate==4.1.1',
-        'urllib3==1.24.3',
+        'urllib3==1.26.0',
         'pytest==7.1.2'
     ],
     entry_points={
