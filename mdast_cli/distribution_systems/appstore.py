@@ -56,13 +56,14 @@ class AppStore(DistributionSystem):
     """
 
     def __init__(self, appstore_apple_id, appstore_password2FA,
-                 appstore_app_id=None, appstore_bundle_id=None, appstore_file_name=None):
+                 appstore_app_id=None, appstore_bundle_id=None, appstore_file_name=None, lookup=False):
         self.apple_id = appstore_apple_id
         self.pass2FA = appstore_password2FA
         self.app_id = appstore_app_id
         self.bundle_id = appstore_bundle_id
         self.appstore_file_name = appstore_file_name
         self.download_path = 'downloaded_apps'
+        self.lookup = lookup
 
         super().__init__(appstore_app_id, '')
         self.sess = requests.Session()
@@ -99,7 +100,8 @@ class AppStore(DistributionSystem):
                          f'with name: "{app_info["trackName"]}", version: {app_info["version"]},'
                          f' app_id: {app_info["trackId"]}')
                 self.app_id = app_info["trackId"]
-
+                if self.lookup is True:
+                    sys.exit(0)
             Log.info(f'Trying to purchase app with id {self.app_id}')
             purchase_resp = Store.purchase(self.app_id)
             if purchase_resp.status_code == 200:
