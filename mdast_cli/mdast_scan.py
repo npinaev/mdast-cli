@@ -39,6 +39,7 @@ def parse_args():
     parser.add_argument('--appstore_file_name', type=str,
                         help='File name for downloaded application.'
                              ' This argument is optional if distribution system set to "appstore"')
+    parser.add_argument('--lookup', '-l', action='store_true')
 
     # Arguments for Google Play
     parser.add_argument('--google_play_package_name', type=str,
@@ -97,7 +98,8 @@ def main():
                             arguments.appstore_password2FA,
                             arguments.appstore_app_id,
                             arguments.appstore_bundle_id,
-                            arguments.appstore_file_name)
+                            arguments.appstore_file_name,
+                            arguments.lookup)
         app_file = appstore.download_app()
     elif distribution_system == 'google_play':
         app_file = google_play_download(arguments.google_play_package_name,
