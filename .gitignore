@@ -61,3 +61,4 @@ venv!/mdast_cli.egg-info/
 !/.pytest_cache/
 !/reports/
 !/config/creds.ini
+creds.ini
