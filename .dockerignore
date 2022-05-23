@@ -154,3 +154,7 @@ cython_debug/
 /README.md
 /.pytest_cache/
 /poly_app_downloader.egg-info/
+config
+/dist/
+/reports/
+/.coverage

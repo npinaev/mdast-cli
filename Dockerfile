@@ -6,4 +6,6 @@ COPY ./ /mdast_cli
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python3", "./mdast_cli/mdast_scan.py"]
+RUN pip install poly_app_downloader -U
+
+ENTRYPOINT ["poly_app_downloader"]

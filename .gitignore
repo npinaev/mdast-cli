@@ -62,3 +62,7 @@ venv!/mdast_cli.egg-info/
 !/reports/
 !/config/creds.ini
 creds.ini
+!/dist/
+!/reports/
+!/.coverage
+dist
