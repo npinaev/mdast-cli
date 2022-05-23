@@ -104,14 +104,9 @@ def test_device_builder_get_base_headers(gp_api):
 def test_device_builder_get_device_upload_headers(gp_api):
     device_upload_headers = gp_api.deviceBuilder.getDeviceUploadHeaders()
     assert device_upload_headers['Accept-Language'] == 'en-US'
-    # assert device_upload_headers['User-Agent'] == 'Android-Finsky/10.4.13-all [0] [PR] 198917767 (api=3,versionCode=81041300,sdk=27,device=angler,hardware=angler,product=angler,platformVersionRelease=8.1.0,model=Nexus 6P,buildId=OPM2.171019.029.B1,isWideScreen=0,supportedAbis=arm64-v8a;armeabi-v7a;armeabi)'
-    # assert device_upload_headers['Accept-Language'] == 'en-US'
-    # assert device_upload_headers['Accept-Language'] == 'en-US'
-    # assert device_upload_headers['Accept-Language'] == 'en-US'
-    # assert device_upload_headers['Accept-Language'] == 'en-US'
-    # assert device_upload_headers['Accept-Language'] == 'en-US'
-    # assert device_upload_headers['Accept-Language'] == 'en-US'
-    # assert device_upload_headers['Accept-Language'] == 'en-US'
+    assert device_upload_headers['User-Agent'] == 'Android-Finsky/10.4.13-all [0] [PR] 198917767 (api=3,versionCode=81041300,sdk=27,device=angler,hardware=angler,product=angler,platformVersionRelease=8.1.0,model=Nexus 6P,buildId=OPM2.171019.029.B1,isWideScreen=0,supportedAbis=arm64-v8a;armeabi-v7a;armeabi)'
+    assert device_upload_headers['X-DFE-Client-Id'] == 'am-android-google'
+    assert device_upload_headers['X-DFE-Enabled-Experiments'] == 'cl:billing.select_add_instrument_by_default'
     assert len(device_upload_headers) == 12
 
 
@@ -132,13 +127,10 @@ def test_device_builder_get_login_params(gp_api):
                                                        encrypted_passwd=config['gp']['expected_encrypted_pass'])
     assert len(login_params) == 12
     assert login_params['Email'] == config['gp']['test_email']
-    # assert login_params['add_account'] == '1'
-    # assert login_params['add_account'] == '1'
-    # assert login_params['add_account'] == '1'
-    # assert login_params['add_account'] == '1'
-    # assert login_params['add_account'] == '1'
-    # assert login_params['add_account'] == '1'
-    # assert login_params['add_account'] == '1'
+    assert login_params['add_account'] == '1'
+    assert login_params['accountType'] == 'HOSTED_OR_GOOGLE'
+    assert login_params['android'] == 'source'
+    assert login_params['droidguard_results'] == 'yyoyoew32'
 
 
 def test_device_builder_get_android_checkin_request(gp_api):
@@ -156,13 +148,8 @@ def test_device_builder_get_device_config(gp_api):
     device_config = gp_api.deviceBuilder.getDeviceConfig()
     assert device_config.glEsVersion == 196610
     assert device_config.hasHardKeyboard == False
+    assert device_config.hasFiveWayNavigation == False
     assert device_config.screenHeight == 2392
-    # assert device_config.screenHeight == 2392
-    # assert device_config.screenHeight == 2392
-    # assert device_config.screenHeight == 2392
-    # assert device_config.screenHeight == 2392
-    # assert device_config.screenHeight == 2392
-    # assert device_config.screenHeight == 2392
 
 
 def test_device_builder_get_android_build(gp_api):
@@ -315,7 +302,6 @@ def test_store_client_authenticate():
     auth_resp = store_client.authenticate(config['as']['apple_id'], config['as']['password2FA'])
     assert auth_resp.status == -128
     assert auth_resp.freeSongBalance == '1311811'
-    assert auth_resp.dsPersonId == '20279203723'
     assert auth_resp.cancel_purchase_batch is None
 
 

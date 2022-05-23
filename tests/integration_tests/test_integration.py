@@ -56,7 +56,7 @@ def test_google_play_login_needs_browser_check_for_error_no_token():
         assert e.args[0] == "local variable 'ac2dmToken' referenced before assignment"
 
 
-def test_google_play_login_needs_browser_check_for_error_fuzzing():
+def test_google_play_login_fail_fuzzing():
     gp_api = GooglePlayAPI()
     email_fuzzing=''.join(random.choices(string.ascii_lowercase, k=10))
     password_fuzzing=''.join(random.choices(string.ascii_lowercase, k=10))
@@ -106,7 +106,7 @@ def test_app_store_login_first_try_wrong_pass(capfd):
     assert "ERROR Store authenticate failed! Message: MZFinance.BadLogin.Configurator_message" in out
 
 
-def test_app_store_login_first_try_fuzzing(capfd):
+def test_app_store_login_fuzzing(capfd):
     apple_id = ''.join(random.choices(string.ascii_lowercase, k=10))
     test_pass = ''.join(random.choices(string.ascii_lowercase, k=10))
     login_no_2fa = subprocess.run(
