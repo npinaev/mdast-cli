@@ -32,7 +32,7 @@ TRY_COUNT = 360
 END_SCAN_TIMEOUT = 30
 SLEEP_TIMEOUT = 10
 
-TAG = '1.3.9'
+TAG = '1.3.10'
 
 PACKAGE_NAMES = ['ru.beru.android',
                  'ru.auto.ara',
