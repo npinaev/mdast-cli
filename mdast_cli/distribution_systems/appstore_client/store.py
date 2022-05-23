@@ -2,7 +2,9 @@ import plistlib
 
 import requests
 
+
 from mdast_cli.helpers.logging import Log
+
 
 from .schemas.store_authenticate_req import StoreAuthenticateReq
 from .schemas.store_authenticate_resp import StoreAuthenticateResp

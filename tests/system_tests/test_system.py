@@ -8,7 +8,7 @@ from pytest_testconfig import config
 from mdast_cli.helpers.const import TAG
 
 
-# Google Play unit tests
+# System tests
 def test_install_pypi_package(capfd):
     install_pypi = subprocess.run(
         ['pip', 'install', 'poly_app_downloader', '-U'])
@@ -35,6 +35,22 @@ def test_pypi_download_from_google_play(capfd):
     download_from_gp = subprocess.run(
         ['poly_app_downloader', '--distribution_system', 'google_play', '--google_play_package_name',
          f'{package_name}', '--google_play_gsfid', f'{gsfid}', '--google_play_auth_token',
+         f'{authSubToken}'])
+    out, err = capfd.readouterr()
+    assert download_from_gp.returncode == 0
+    assert "INFO Your application was downloaded!" in out
+    assert "INFO Google Play - Logging in with gsfid and auth token" in out
+    assert "INFO Google Play - Successfully logged in Play Store" in out
+    assert "com.instagram.android" in out
+
+
+def test_docker_download_from_google_play(capfd):
+    gsfid = int(config['gp']['gsfid'])
+    authSubToken = config['gp']['authSubToken']
+    package_name = config['gp']['insta_package_name']
+    download_from_gp = subprocess.run(
+        ['docker', 'run', 'npinaev/poly_app_downloader', '--distribution_system', 'google_play',
+         '--google_play_package_name', f'{package_name}', '--google_play_gsfid', f'{gsfid}', '--google_play_auth_token',
          f'{authSubToken}'])
     out, err = capfd.readouterr()
     assert download_from_gp.returncode == 0
