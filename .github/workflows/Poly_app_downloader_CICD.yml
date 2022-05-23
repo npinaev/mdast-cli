@@ -83,7 +83,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
-          pytest tests/integration_tests
+          pytest tests/integration_tests -vv --tc-file=config/creds.ini
         env:
           PYTHONPATH: "."
 
@@ -107,7 +107,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
-          pytest tests/system_tests --tc-file=config/creds.ini
+          pytest tests/system_tests -vv --tc-file=config/creds.ini
         env:
           PYTHONPATH: "."
 

@@ -1,4 +1,4 @@
-name: Do things every 5 minutes
+name: Run system tests everyday
 
 on:
   schedule:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
           matrix:
-            python-version: [ "3.9" ]
+            python-version: ["3.6", "3.8" ,"3.9" ]
 
     steps:
           - uses: actions/checkout@v3
