@@ -24,7 +24,8 @@ def test_download_docker_image(capfd):
     out, err = capfd.readouterr()
     assert download_docker_image.returncode == 0
     assert "Pulling from npinaev/poly_app_downloader" in out
-    assert "Status: Image is up to date for npinaev/poly_app_downloader" in out
+    assert "Image is up to date for npinaev/poly_app_downloader" in out \
+           or "Downloaded newer image for npinaev/poly_app_downloader" in out
 
 
 def test_pypi_download_from_google_play(capfd):

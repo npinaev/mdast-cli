@@ -1,9 +1,8 @@
 name: Full CI/CD Pipeline for Poly App downloader tool
 
-on:
-  push:
-    branches:
-      - main
+on: push
+#    branches:
+#      - main
 
 jobs:
   build-n-publish-pypi:
@@ -64,7 +63,7 @@ jobs:
         run: docker push npinaev/poly_app_downloader
 
   run-integration-tests:
-    needs: build-n-publish-pypi
+#    needs: build-n-publish-pypi
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -88,7 +87,7 @@ jobs:
           PYTHONPATH: "."
 
   run-system-tests:
-    needs: run-integration-tests
+#    needs: run-integration-tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -103,7 +102,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flake8 pytest
+          pip install flake8 pytest pytest_testconfig
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
