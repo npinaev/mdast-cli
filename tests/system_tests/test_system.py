@@ -16,7 +16,6 @@ def test_install_pypi_package(capfd):
     out, err = capfd.readouterr()
     assert install_pypi.returncode == 0
     assert ("Requirement already satisfied" in out or "Successfully installed" in out)
-    assert TAG in out
 
 
 def test_download_docker_image(capfd):
