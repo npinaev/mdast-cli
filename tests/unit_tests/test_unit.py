@@ -129,7 +129,7 @@ def test_device_builder_get_login_params(gp_api):
     assert login_params['Email'] == config['gp']['test_email']
     assert login_params['add_account'] == '1'
     assert login_params['accountType'] == 'HOSTED_OR_GOOGLE'
-    assert login_params['android'] == 'source'
+    assert login_params['source'] == 'android'
     assert login_params['droidguard_results'] == 'yyoyoew32'
 
 
