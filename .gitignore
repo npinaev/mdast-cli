@@ -65,3 +65,4 @@ creds.ini
 !/dist/
 !/reports/
 !/.coverage
+dist
