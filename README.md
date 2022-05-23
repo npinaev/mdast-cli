@@ -13,11 +13,11 @@ This script is designed to integrate mobile applications' download in the contin
 ### From PyPi
 It is possible to install a package using pip:
 
-`pip install mdast_cli`
+`pip install poly_app_downloader`
 
-With this method, it is possible to start scanning without specifying the `python` interpreter using the` mdast_cli` command, for example:
+With this method, it is possible to start scanning without specifying the `python` interpreter using the` poly_app_downloader` command, for example:
 
-`mdast_cli -h`
+`poly_app_downloader -h`
 
 All examples below will use exactly this approach.
 
